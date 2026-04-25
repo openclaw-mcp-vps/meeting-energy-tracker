@@ -1,0 +1,46 @@
+// Reference schema for meeting-energy-tracker data entities.
+// Runtime persistence is implemented with direct SQLite SQL in lib/database.ts.
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Meeting {
+  id              String    @id
+  userEmail       String
+  provider        String
+  title           String
+  startTime       DateTime
+  endTime         DateTime
+  durationMinutes Int
+  attendeeCount   Int
+  isRecurring     Boolean
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  feedback        Feedback[]
+}
+
+model Feedback {
+  id          String   @id
+  meetingId   String
+  userEmail   String
+  energyScore Int
+  notes       String?
+  submittedAt DateTime
+  meeting     Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@unique([meetingId, userEmail])
+}
+
+model Purchase {
+  id                Int      @id @default(autoincrement())
+  email             String   @unique
+  checkoutSessionId String   @unique
+  source            String
+  paidAt            DateTime
+}

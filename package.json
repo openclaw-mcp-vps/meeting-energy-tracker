@@ -1,0 +1,40 @@
+{
+  "name": "meeting-energy-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.4.1",
+    "@lemonsqueezy/lemonsqueezy.js": "4.0.0",
+    "@microsoft/microsoft-graph-client": "3.0.7",
+    "better-sqlite3": "12.9.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "googleapis": "171.4.0",
+    "lucide-react": "^1.11.0",
+    "next": "15.5.15",
+    "next-auth": "4.24.14",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "recharts": "3.8.1",
+    "shadcn": "^4.5.0",
+    "stripe": "22.1.0",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "4.2.4",
+    "tw-animate-css": "^1.4.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.4",
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "22.15.17",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}
